@@ -1,0 +1,33 @@
+.TH ZAPFILES 1 "v\ 1.0.0" "2014-0-19" "GNU"
+.SH NAME
+.B zapfiles
+\- Delete files listed in a user specified file.
+.SH SYNOPSIS
+.B oldfiles \fR[option] \fIfile.lst
+.SH OPTIONS
+.TP
+\-h, prints a brief help message.
+.SH DESCRIPTION
+\fBzapfiles\fR reads each line in the input filename and if the lines
+.br
+are correctly formatted, attempts to delete each pathname.
+.br
+Each line must be formatted the way broken symlinks are reported by a
+.br
+program such as \fBoldfiles\fR or \fBduplicates\fR for example:
+.br
+<path>: No such file  ...
+.br
+or in the format put to \fIstdout \fR by a program such as \fBoldfiles
+.br
+\fR<path>!*END*! ...
+.SH ERRORS
+Errors such as lines in the file conforming neither of the required
+.br
+formats are simply listed on \fIstderr\fR as are failures happening
+.br
+when unlinking the presented pathnames.
+.SH VERSION
+This documentation describes \fBzapfiles\fR version 1.0.0
+.SH "SEE ALSO"
+brokensym(1), duplicates(1), oldfiles(1), zapfiles(1), cleanuputils(7)

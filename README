@@ -1,0 +1,6 @@
+Zapfiles is intened to work on the filed output of programs like
+oldfiles, duplicates and brokensym.
+
+The format of the lines in the input file must be a path name terminated
+with ':No such file' or '!*END*!'. Incorrectly formatted lines will be
+reported but otherwise ignored.
