@@ -1,0 +1,20 @@
+#!/bin/bash
+# mktestdata - makes a set of data for testing oldfiles/zapfiles
+cd	# $HOME
+# set up paths
+d1=~/Test
+d2=~/Test/Level1
+d3=~/Test/Level1/Level2
+ba="d1"/BranchA
+bb="d1"/BranchB
+bc="d1"/BranchC
+
+if [[ -d "$d1" ]]; then
+	rm -rf "$d1"
+fi
+
+mkdir -p "$d3"
+mkdir "$ba"
+mkdir "$bb"
+mkdir "$bc"
+
