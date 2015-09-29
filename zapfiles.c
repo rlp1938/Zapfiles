@@ -1,6 +1,7 @@
+
 /*      zapfiles.c
  *
- *	Copyright 2011 Bob Parker <rlp1938@gmail.com>
+ *	Copyright 2015 Bob Parker <rlp1938@gmail.com>
  *
  *	This program is free software; you can redistribute it and/or modify
  *	it under the terms of the GNU General Public License as published by
@@ -25,14 +26,14 @@
 #include <getopt.h>
 #include <sys/stat.h>
 #include <dirent.h>
-#include "fileutil.h"
+#include "fileops.h"
 
 
 static char *helpmsg = "\n\tUsage: zapfiles [option] listfile\n"
-	"\tzapfiles deletes the files listed in listfile."
-	"\tFiles must be in the format sent by oldfiles to stdout or\n"
-	"\tin the format sent to stderr by oldfiles, brokensym or\n "
-	"\tduplicates\n"
+  "\tzapfiles deletes the files listed in listfile."
+  "\tFiles must be in the format sent by oldfiles to stdout or\n"
+  "\tin the format sent to stderr by oldfiles, brokensym or\n "
+  "\tduplicates\n"
   "\n\tOptions:\n"
   "\t-h outputs this help message.\n"
   ;
@@ -112,7 +113,7 @@ int main(int argc, char **argv)
 	}
 
 	return 0;
-}//main()
+}
 
 void dohelp(int forced)
 {

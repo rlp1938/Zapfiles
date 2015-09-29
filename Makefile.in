@@ -97,7 +97,7 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_zapfiles_OBJECTS = fileutil.$(OBJEXT)
+am_zapfiles_OBJECTS = zapfiles.$(OBJEXT) fileops.$(OBJEXT)
 zapfiles_OBJECTS = $(am_zapfiles_OBJECTS)
 zapfiles_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -291,8 +291,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-AM_CFLAGS = -Wall -Wextra
-zapfiles_SOURCES = zapfiles. c fileutil.h fileutil.c
+AM_CFLAGS = -Wall -Wextra -D_GNU_SOURCE=1
+zapfiles_SOURCES = zapfiles.c fileops.h fileops.c
 man_MANS = zapfiles.1
 EXTRA_BUILD = zapfiles.1
 all: config.h
@@ -402,7 +402,8 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fileutil.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fileops.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/zapfiles.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
